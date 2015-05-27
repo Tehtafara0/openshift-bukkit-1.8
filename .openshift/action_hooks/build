@@ -1,0 +1,12 @@
+#!/bin/bash
+SERVER_PROPERTIES=server.properties
+CRAFTBUKKIT_SERVER_JAR=craftbukkit-dev.jar
+
+set -x 
+
+cd $OPENSHIFT_DATA_DIR
+
+if [ ! -e "$CRAFTBUKKIT_SERVER_JAR" ]; then
+	wget "http://eu.tcpr.ca/download/craftbukkit/craftbukkit-1.8.3-R0.1-SNAPSHOT-latest.jar" -O $CRAFTBUKKIT_SERVER_JAR
+fi
+
